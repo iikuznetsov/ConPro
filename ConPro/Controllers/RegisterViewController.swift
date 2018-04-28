@@ -1,17 +1,8 @@
-//
-//  RegisterViewController.swift
-//  ConPro
-//
-//  Created by Мария Коровина on 24.04.2018.
-//  Copyright © 2018 ConPro. All rights reserved.
-//
-
 import UIKit
 import Alamofire
+import Moya
 
 class RegisterViewController: UIViewController {
-
-    let url = "https://api.beheltcarrot.ru/account/Register"
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
@@ -24,15 +15,22 @@ class RegisterViewController: UIViewController {
         let email = emailTextField.text!
         let password = passwordTextField.text!
         
-        Alamofire.request(url, method: .post, parameters:["Email":email,"Password":password])
-            .responseData {
-                response in
-                self.statusLabel.text = response.error?.localizedDescription
-                print(response)
+        provider.request(.register(email: email, password: password)) {
+            result in
+            switch result {
+            case let .success(moyaResponse):
+                let data = moyaResponse.data
+                let statusCode = moyaResponse.statusCode
+                print(moyaResponse.request.debugDescription)
+                print(moyaResponse)
+            case let .failure(error):
+                self.statusLabel.text = error.errorDescription
+            }
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        provider = MoyaProvider<APIService>()
         statusLabel.text = ""
         emailTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         firstNameTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)

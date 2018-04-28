@@ -1,18 +1,11 @@
-//
-//  LoginViewController.swift
-//  ConPro
-//
-//  Created by Мария Коровина on 24.04.2018.
-//  Copyright © 2018 ConPro. All rights reserved.
-//
-
 import UIKit
 import Alamofire
+import Moya
 
 class LoginViewController: UIViewController {
-    let url = "https://api.beheltcarrot.ru/account/GetToken"
     override func viewDidLoad() {
         super.viewDidLoad()
+        provider = MoyaProvider<APIService>()
         statusLabel.text = ""
         emailTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
@@ -29,13 +22,19 @@ class LoginViewController: UIViewController {
                 statusLabel.text = "Please fill in both fields"
                 return
         }
-
-        Alamofire.request(url, method: .post, parameters:["Email":email,"Password":password])
-            .responseData {
-            response in
-            self.statusLabel.text = response.error?.localizedDescription
-            print(response)
+        
+        provider.request(.login(email: email, password: password)) {
+            result in
+            switch result {
+            case let .success(moyaResponse):
+                let data = moyaResponse.data 
+                let statusCode = moyaResponse.statusCode
+                print(moyaResponse.request.debugDescription)
+                print(moyaResponse)
+            case let .failure(error):
+                self.statusLabel.text = error.errorDescription
             }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

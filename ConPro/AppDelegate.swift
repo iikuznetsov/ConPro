@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ConPro
-//
-//  Created by Мария Коровина on 24.04.2018.
-//  Copyright © 2018 ConPro. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
