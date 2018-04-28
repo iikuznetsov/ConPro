@@ -13,9 +13,13 @@
 		AA90E10E208F732900639262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90E10C208F732900639262 /* LaunchScreen.storyboard */; };
 		AA90E119208F76B900639262 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E118208F76B900639262 /* LoginViewController.swift */; };
 		AA90E11B208F7F2F00639262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E11A208F7F2F00639262 /* RegisterViewController.swift */; };
+		E6003933AACC2E746061BEFE /* Pods_ConPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CCC46CCE5649E3D4112AC0B /* Pods-ConPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.release.xcconfig"; sourceTree = "<group>"; };
+		7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
 		AA90E100208F732800639262 /* ConPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA90E103208F732800639262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA90E108208F732800639262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,17 +35,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6003933AACC2E746061BEFE /* Pods_ConPro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		794185911BE343A21E172BE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */,
+				1CCC46CCE5649E3D4112AC0B /* Pods-ConPro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA90E0F7208F732800639262 = {
 			isa = PBXGroup;
 			children = (
 				AA90E102208F732800639262 /* ConPro */,
 				AA90E101208F732800639262 /* Products */,
+				794185911BE343A21E172BE2 /* Pods */,
+				FC88E8854BD174F8F5904361 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,6 +107,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		FC88E8854BD174F8F5904361 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA90E112208F732900639262 /* Build configuration list for PBXNativeTarget "ConPro" */;
 			buildPhases = (
+				F06163970E24F6D92230D3DE /* [CP] Check Pods Manifest.lock */,
 				AA90E0FC208F732800639262 /* Sources */,
 				AA90E0FD208F732800639262 /* Frameworks */,
 				AA90E0FE208F732800639262 /* Resources */,
+				71FCE9BBBE4E192F9D81CD86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +182,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		71FCE9BBBE4E192F9D81CD86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ConPro/Pods-ConPro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConPro/Pods-ConPro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F06163970E24F6D92230D3DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ConPro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA90E0FC208F732800639262 /* Sources */ = {
@@ -306,6 +371,7 @@
 		};
 		AA90E113208F732900639262 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -323,6 +389,7 @@
 		};
 		AA90E114208F732900639262 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CCC46CCE5649E3D4112AC0B /* Pods-ConPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
