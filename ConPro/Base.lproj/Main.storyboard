@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kL-xH-XV1">
-                                <rect key="frame" x="98" y="377" width="179" height="22.5"/>
+                                <rect key="frame" x="98" y="383" width="179" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -83,7 +83,7 @@
                             <constraint firstItem="HUN-w4-51J" firstAttribute="top" secondItem="Nyc-zS-Efw" secondAttribute="bottom" constant="8" id="p3O-DP-Ysw"/>
                             <constraint firstItem="HUN-w4-51J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="98" id="s6f-eu-mVY"/>
                             <constraint firstItem="BuU-k3-oiR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="uer-ml-uF1"/>
-                            <constraint firstItem="6kL-xH-XV1" firstAttribute="top" secondItem="HUN-w4-51J" secondAttribute="bottom" constant="19" id="xtf-44-UTO"/>
+                            <constraint firstItem="6kL-xH-XV1" firstAttribute="top" secondItem="HUN-w4-51J" secondAttribute="bottom" constant="25" id="xtf-44-UTO"/>
                             <constraint firstItem="BuU-k3-oiR" firstAttribute="top" secondItem="hN1-au-Imu" secondAttribute="bottom" constant="8" id="y9Y-wy-GTZ"/>
                             <constraint firstItem="c9u-tg-JQy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="137" id="yXd-7x-mlS"/>
                         </constraints>
@@ -98,6 +98,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Events View Controller-->
+        <scene sceneID="imp-zQ-9CZ">
+            <objects>
+                <viewController storyboardIdentifier="EventsViewControllerID" id="0RT-In-RAt" customClass="EventsViewController" customModule="ConPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EKh-a2-gaG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANP-BP-KBM">
+                                <rect key="frame" x="54" y="249" width="267" height="30"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                                <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ANP-BP-KBM" firstAttribute="leading" secondItem="Dst-2R-6tr" secondAttribute="leading" constant="54" id="4ge-Co-Rsg"/>
+                            <constraint firstItem="ANP-BP-KBM" firstAttribute="top" secondItem="Dst-2R-6tr" secondAttribute="top" constant="229" id="FcN-an-Eqw"/>
+                            <constraint firstItem="ANP-BP-KBM" firstAttribute="centerX" secondItem="Dst-2R-6tr" secondAttribute="centerX" id="MYe-fh-tnL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Dst-2R-6tr"/>
+                    </view>
+                    <connections>
+                        <outlet property="lbl" destination="ANP-BP-KBM" id="Wcd-9G-MIx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Asb-Jj-Cs9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266.4000000000001" y="220.83958020989508"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="V4O-Xc-jUt">
@@ -119,26 +150,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5eZ-ik-OEb">
-                                <rect key="frame" x="78" y="267" width="218" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="family-name"/>
-                            </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="o5L-Zu-znD">
-                                <rect key="frame" x="78" y="305" width="218" height="30"/>
+                                <rect key="frame" x="78" y="229" width="218" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" repeat password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9HL-hI-1MQ">
-                                <rect key="frame" x="78" y="343" width="218" height="30"/>
+                                <rect key="frame" x="78" y="267" width="218" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fsa-bp-4We">
-                                <rect key="frame" x="98" y="398" width="179" height="35"/>
+                                <rect key="frame" x="98" y="322" width="179" height="35"/>
                                 <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -149,14 +174,8 @@
                                     <action selector="register:" destination="752-kK-1zV" eventType="touchUpInside" id="otj-9Y-onj"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wB3-EO-BUy">
-                                <rect key="frame" x="78" y="229" width="218" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="name"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Pb-oa-vh3">
-                                <rect key="frame" x="98" y="441" width="179" height="31"/>
+                                <rect key="frame" x="98" y="365" width="179" height="31"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="14"/>
                                 <state key="normal" title="or log in">
                                     <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,8 +184,11 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="AAq-tE-m5x"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSq-Z9-DIV">
-                                <rect key="frame" x="98" y="493" width="179" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zSq-Z9-DIV">
+                                <rect key="frame" x="98" y="421" width="179" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="afJ-VS-PWM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -175,30 +197,24 @@
                         <color key="backgroundColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5Pb-oa-vh3" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="0Tl-zS-e2c"/>
+                            <constraint firstItem="Fsa-bp-4We" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="89T-78-UAk"/>
                             <constraint firstItem="bYr-Y7-JyH" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="78" id="8tR-bM-Oms"/>
-                            <constraint firstItem="o5L-Zu-znD" firstAttribute="top" secondItem="5eZ-ik-OEb" secondAttribute="bottom" constant="8" id="BCz-e4-VEp"/>
                             <constraint firstItem="o5L-Zu-znD" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="BRe-UE-FvJ"/>
-                            <constraint firstItem="wB3-EO-BUy" firstAttribute="top" secondItem="bYr-Y7-JyH" secondAttribute="bottom" constant="8" id="F5p-dI-AYb"/>
                             <constraint firstItem="Fsa-bp-4We" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="G7w-bq-L3E"/>
-                            <constraint firstItem="5eZ-ik-OEb" firstAttribute="top" secondItem="wB3-EO-BUy" secondAttribute="bottom" constant="8" id="GyS-97-i8Z"/>
                             <constraint firstItem="bYr-Y7-JyH" firstAttribute="top" secondItem="t8N-Hw-AjL" secondAttribute="bottom" constant="40" id="ICt-Dd-hVJ"/>
                             <constraint firstItem="t8N-Hw-AjL" firstAttribute="top" secondItem="02A-hb-ikA" secondAttribute="top" constant="30" id="IFE-6V-fiw"/>
-                            <constraint firstItem="5eZ-ik-OEb" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="78" id="Pna-On-3XZ"/>
                             <constraint firstItem="9HL-hI-1MQ" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="Ro8-hA-23E"/>
-                            <constraint firstItem="wB3-EO-BUy" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="SMH-di-QvB"/>
                             <constraint firstItem="Fsa-bp-4We" firstAttribute="top" secondItem="9HL-hI-1MQ" secondAttribute="bottom" constant="25" id="Xib-oH-CpO"/>
                             <constraint firstItem="zSq-Z9-DIV" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="XuV-xU-Cia"/>
                             <constraint firstItem="o5L-Zu-znD" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="78" id="f4A-6e-WHq"/>
-                            <constraint firstItem="zSq-Z9-DIV" firstAttribute="top" secondItem="5Pb-oa-vh3" secondAttribute="bottom" constant="21" id="frf-Pr-Zd8"/>
+                            <constraint firstItem="zSq-Z9-DIV" firstAttribute="top" secondItem="5Pb-oa-vh3" secondAttribute="bottom" constant="25" id="frf-Pr-Zd8"/>
                             <constraint firstItem="t8N-Hw-AjL" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="137" id="gPm-zW-BJD"/>
-                            <constraint firstItem="wB3-EO-BUy" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="j4A-1n-i1J"/>
                             <constraint firstItem="5Pb-oa-vh3" firstAttribute="top" secondItem="Fsa-bp-4We" secondAttribute="bottom" constant="8" id="m1f-M5-bmg"/>
                             <constraint firstItem="9HL-hI-1MQ" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="78" id="n1l-47-hNn"/>
                             <constraint firstItem="Fsa-bp-4We" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="98" id="osh-js-vsL"/>
-                            <constraint firstItem="5eZ-ik-OEb" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="qon-rE-P45"/>
-                            <constraint firstItem="wB3-EO-BUy" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="78" id="rav-3j-e6S"/>
                             <constraint firstItem="5Pb-oa-vh3" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="98" id="sMc-FQ-4Yt"/>
                             <constraint firstItem="zSq-Z9-DIV" firstAttribute="leading" secondItem="02A-hb-ikA" secondAttribute="leading" constant="98" id="skf-nh-RQY"/>
+                            <constraint firstItem="o5L-Zu-znD" firstAttribute="top" secondItem="bYr-Y7-JyH" secondAttribute="bottom" constant="8" symbolic="YES" id="tIr-DS-N7b"/>
                             <constraint firstItem="9HL-hI-1MQ" firstAttribute="top" secondItem="o5L-Zu-znD" secondAttribute="bottom" constant="8" id="vAf-lf-cxl"/>
                             <constraint firstItem="t8N-Hw-AjL" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="xVg-tc-zcp"/>
                             <constraint firstItem="bYr-Y7-JyH" firstAttribute="centerX" secondItem="02A-hb-ikA" secondAttribute="centerX" id="yXE-DO-l2l"/>
@@ -207,8 +223,6 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="bYr-Y7-JyH" id="v4s-Ky-GoW"/>
-                        <outlet property="firstNameTextField" destination="wB3-EO-BUy" id="7iy-YX-tMy"/>
-                        <outlet property="lastNameTextField" destination="5eZ-ik-OEb" id="IuR-h0-6VL"/>
                         <outlet property="passwordTextField" destination="o5L-Zu-znD" id="sGS-a7-3vn"/>
                         <outlet property="repeatedPasswordTextField" destination="9HL-hI-1MQ" id="B8E-66-faz"/>
                         <outlet property="statusLabel" destination="zSq-Z9-DIV" id="dPB-4x-52P"/>

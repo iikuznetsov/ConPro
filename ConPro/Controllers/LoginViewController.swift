@@ -1,11 +1,9 @@
 import UIKit
-import Alamofire
 import Moya
 
 class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider = MoyaProvider<APIService>()
         statusLabel.text = ""
         emailTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
@@ -27,10 +25,22 @@ class LoginViewController: UIViewController {
             result in
             switch result {
             case let .success(moyaResponse):
-                let data = moyaResponse.data 
-                let statusCode = moyaResponse.statusCode
-                print(moyaResponse.request.debugDescription)
-                print(moyaResponse)
+                do {
+                    //try moyaResponse.filterSuccessfulStatusCodes()
+                    let response = try moyaResponse.map(Response.self)
+                    UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
+
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier :"EventsViewControllerID") as! EventsViewController
+                    self.present(vc, animated: true)
+                }
+                catch {
+                    let error = error as? MoyaError
+                    
+                    if let code = error?.response?.statusCode {
+                        self.statusLabel.text = String(code)
+                    }
+                }
+                
             case let .failure(error):
                 self.statusLabel.text = error.errorDescription
             }

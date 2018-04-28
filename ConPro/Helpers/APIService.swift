@@ -28,7 +28,7 @@ extension APIService: TargetType {
     var task: Task {
         switch self {
         case .login(let email, let password), .register(let email, let password):
-            return .requestParameters(parameters: ["email": email, "password": password], encoding: JSONEncoding.default)
+            return .requestCompositeParameters(bodyParameters:  ["email": email, "password": password], bodyEncoding: JSONEncoding.default, urlParameters: [:])
         }
     }
     

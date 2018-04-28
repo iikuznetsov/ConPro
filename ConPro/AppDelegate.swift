@@ -1,4 +1,5 @@
 import UIKit
+import Moya
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -7,7 +8,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        provider = MoyaProvider<APIService>()
+        //UserDefaults.standard.removeObject(forKey: "token")
+        if let token = UserDefaults.standard.data(forKey: "token") {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventsViewControllerID") as! EventsViewController
+            self.window?.rootViewController = vc
+        }
         return true
     }
 

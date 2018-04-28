@@ -1,12 +1,9 @@
 import UIKit
-import Alamofire
 import Moya
 
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatedPasswordTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
@@ -14,31 +11,50 @@ class RegisterViewController: UIViewController {
     @IBAction func register(_ sender: UIButton) {
         let email = emailTextField.text!
         let password = passwordTextField.text!
+        let rpassword = repeatedPasswordTextField.text!
+        
+        if password != rpassword {
+            return
+        }
         
         provider.request(.register(email: email, password: password)) {
             result in
             switch result {
             case let .success(moyaResponse):
-                let data = moyaResponse.data
-                let statusCode = moyaResponse.statusCode
-                print(moyaResponse.request.debugDescription)
-                print(moyaResponse)
+                do {
+                    //try moyaResponse.filterSuccessfulStatusCodes()
+                    let response = try moyaResponse.map(Response.self)
+                    UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
+                    
+                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier :"EventsViewControllerID") as! EventsViewController
+                    self.present(vc, animated: true)
+                }
+                catch {
+                    let error = error as? MoyaError
+                    
+                    if let code = error?.response?.statusCode {
+                        self.statusLabel.text = String(code)
+                    }
+                }
+                
             case let .failure(error):
                 self.statusLabel.text = error.errorDescription
             }
         }
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        provider = MoyaProvider<APIService>()
         statusLabel.text = ""
         emailTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
-        firstNameTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
-        lastNameTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         repeatedPasswordTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @objc func editingChanged(_ textField: UITextField) {
         
         statusLabel.text = ""

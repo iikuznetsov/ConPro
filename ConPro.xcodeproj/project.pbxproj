@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AA187C212094895600D29D5E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA187C202094895600D29D5E /* APIService.swift */; };
+		AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D2209538B200B34365 /* EventsViewController.swift */; };
 		AA90E104208F732800639262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E103208F732800639262 /* AppDelegate.swift */; };
 		AA90E109208F732800639262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90E107208F732800639262 /* Main.storyboard */; };
 		AA90E10B208F732900639262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA90E10A208F732900639262 /* Assets.xcassets */; };
 		AA90E10E208F732900639262 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90E10C208F732900639262 /* LaunchScreen.storyboard */; };
 		AA90E119208F76B900639262 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E118208F76B900639262 /* LoginViewController.swift */; };
 		AA90E11B208F7F2F00639262 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E11A208F7F2F00639262 /* RegisterViewController.swift */; };
+		AAB6B4232094B862008C4CB2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB6B4222094B862008C4CB2 /* Token.swift */; };
 		E6003933AACC2E746061BEFE /* Pods_ConPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +24,7 @@
 		7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
 		AA187C202094895600D29D5E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AA88F1D2209538B200B34365 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		AA90E100208F732800639262 /* ConPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA90E103208F732800639262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA90E108208F732800639262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		AA90E10F208F732900639262 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA90E118208F76B900639262 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AA90E11A208F7F2F00639262 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		AAB6B4222094B862008C4CB2 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		AA90E115208F73BA00639262 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AAB6B4222094B862008C4CB2 /* Token.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			children = (
 				AA90E118208F76B900639262 /* LoginViewController.swift */,
 				AA90E11A208F7F2F00639262 /* RegisterViewController.swift */,
+				AA88F1D2209538B200B34365 /* EventsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,9 +249,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA90E11B208F7F2F00639262 /* RegisterViewController.swift in Sources */,
+				AAB6B4232094B862008C4CB2 /* Token.swift in Sources */,
 				AA90E119208F76B900639262 /* LoginViewController.swift in Sources */,
 				AA187C212094895600D29D5E /* APIService.swift in Sources */,
 				AA90E104208F732800639262 /* AppDelegate.swift in Sources */,
+				AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
