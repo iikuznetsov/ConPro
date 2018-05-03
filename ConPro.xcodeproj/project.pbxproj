@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA187C212094895600D29D5E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA187C202094895600D29D5E /* APIService.swift */; };
 		AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D2209538B200B34365 /* EventsViewController.swift */; };
+		AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */; };
 		AA90E104208F732800639262 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA90E103208F732800639262 /* AppDelegate.swift */; };
 		AA90E109208F732800639262 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA90E107208F732800639262 /* Main.storyboard */; };
 		AA90E10B208F732900639262 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA90E10A208F732900639262 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
 		AA187C202094895600D29D5E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AA88F1D2209538B200B34365 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AA90E100208F732800639262 /* ConPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA90E103208F732800639262 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA90E108208F732800639262 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		AA90E116208F73C200639262 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				AAB6B4232094B862008C4CB2 /* Token.swift in Sources */,
 				AA90E119208F76B900639262 /* LoginViewController.swift in Sources */,
 				AA187C212094895600D29D5E /* APIService.swift in Sources */,
+				AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */,
 				AA90E104208F732800639262 /* AppDelegate.swift in Sources */,
 				AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */,
 			);
