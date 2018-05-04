@@ -10,7 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         provider = MoyaProvider<APIService>()
         //UserDefaults.standard.removeObject(forKey: "token")
-        if let token = UserDefaults.standard.data(forKey: "token") {
+        if UserDefaults.standard.data(forKey: "token") != nil {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootNavigationControllerID")
             self.window?.rootViewController = vc
         }
