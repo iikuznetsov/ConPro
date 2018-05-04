@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         provider = MoyaProvider<APIService>()
         //UserDefaults.standard.removeObject(forKey: "token")
         if let token = UserDefaults.standard.data(forKey: "token") {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventsViewControllerID") as! EventsViewController
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootNavigationControllerID")
             self.window?.rootViewController = vc
         }
         return true

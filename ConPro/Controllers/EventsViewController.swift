@@ -28,6 +28,19 @@ class EventsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return sections[section]
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "segueToEvent", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "segueToEvent" {
+            if let indexPath = eventsTableView.indexPathForSelectedRow {
+                let vc = segue.destination as! EventViewController
+                vc.selectedEvent = events[indexPath.section][indexPath.row]
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

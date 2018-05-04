@@ -26,8 +26,8 @@ class RegisterViewController: UIViewController {
                     let response = try moyaResponse.map(Response.self)
                     UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
                     
-                    let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier :"EventsViewControllerID") as! EventsViewController
-                    self.present(vc, animated: true)
+                    self.performSegue(withIdentifier: "segueToEvents", sender: self)
+
                 }
                 catch {
                     let error = error as? MoyaError
