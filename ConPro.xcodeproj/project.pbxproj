@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA187C212094895600D29D5E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA187C202094895600D29D5E /* APIService.swift */; };
+		AA47E79620AC41DA00F4F1DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47E79520AC41DA00F4F1DF /* Extensions.swift */; };
 		AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D2209538B200B34365 /* EventsViewController.swift */; };
 		AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */; };
 		AA88F1D7209C4E7E00B34365 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D6209C4E7E00B34365 /* EventViewController.swift */; };
@@ -28,6 +29,7 @@
 		7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
 		AA187C202094895600D29D5E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		AA47E79520AC41DA00F4F1DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA88F1D2209538B200B34365 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AA88F1D6209C4E7E00B34365 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				AA187C202094895600D29D5E /* APIService.swift */,
+				AA47E79520AC41DA00F4F1DF /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				AA88F1D7209C4E7E00B34365 /* EventViewController.swift in Sources */,
 				AA90E104208F732800639262 /* AppDelegate.swift in Sources */,
 				AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */,
+				AA47E79620AC41DA00F4F1DF /* Extensions.swift in Sources */,
 				AA9E07D1209C7EDC00681BCA /* MenuCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

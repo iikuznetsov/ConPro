@@ -26,7 +26,6 @@ class LoginViewController: UIViewController {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    //try moyaResponse.filterSuccessfulStatusCodes()
                     let response = try moyaResponse.map(Response.self)
                     UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
 
@@ -44,10 +43,6 @@ class LoginViewController: UIViewController {
                 self.statusLabel.text = error.errorDescription
             }
         }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     @objc func editingChanged(_ textField: UITextField) {

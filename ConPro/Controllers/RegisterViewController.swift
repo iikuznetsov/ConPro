@@ -9,11 +9,20 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     
     @IBAction func register(_ sender: UIButton) {
-        let email = emailTextField.text!
-        let password = passwordTextField.text!
-        let rpassword = repeatedPasswordTextField.text!
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text,
+            let rpassword = repeatedPasswordTextField.text,
+            !email.isEmpty, !password.isEmpty, !rpassword.isEmpty else {
+                statusLabel.text = "Please fill in all fields"
+                return
+        }
         
         if password != rpassword {
+            return
+        }
+        
+        if !email.isEmail() {
+            statusLabel.text = "Email is incorrect"
             return
         }
         
@@ -22,7 +31,6 @@ class RegisterViewController: UIViewController {
             switch result {
             case let .success(moyaResponse):
                 do {
-                    //try moyaResponse.filterSuccessfulStatusCodes()
                     let response = try moyaResponse.map(Response.self)
                     UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
                     
@@ -51,10 +59,6 @@ class RegisterViewController: UIViewController {
         repeatedPasswordTextField.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
     @objc func editingChanged(_ textField: UITextField) {
         
         statusLabel.text = ""
@@ -77,6 +81,7 @@ class RegisterViewController: UIViewController {
             textField.layer.borderColor = UIColor.clear.cgColor;
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

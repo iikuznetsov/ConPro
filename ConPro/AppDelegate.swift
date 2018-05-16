@@ -14,6 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RootNavigationControllerID")
             self.window?.rootViewController = vc
         }
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().isTranslucent = true
+
         return true
     }
 
