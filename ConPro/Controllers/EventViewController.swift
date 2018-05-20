@@ -2,10 +2,11 @@ import UIKit
 
 class EventViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var selectedEvent: String?
+    var selectedEvent: Event?
     var menu = [[#imageLiteral(resourceName: "info"),"Info"],[#imageLiteral(resourceName: "news"),"News Feed"],[#imageLiteral(resourceName: "people"),"Participants"],[#imageLiteral(resourceName: "calendar"),"Schedule"],[#imageLiteral(resourceName: "map"),"Map"],[#imageLiteral(resourceName: "mic"),"Speakers"],[#imageLiteral(resourceName: "chat"),"Chat"],[#imageLiteral(resourceName: "list"),"Subevents"]]
     @IBOutlet weak var menuCollectionView: UICollectionView!
     @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menu.count
@@ -20,7 +21,8 @@ class EventViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventNameLabel.text = selectedEvent
+        eventNameLabel.text = selectedEvent?.name
+        eventImage.image = selectedEvent?.image
     }
 
     override func didReceiveMemoryWarning() {

@@ -6,9 +6,10 @@ var provider: MoyaProvider<APIService>!
 enum APIService {
     case register(email: String, password: String)
     case login(email: String, password: String)
+    case getUser
 }
 
-extension APIService: TargetType {
+extension APIService: TargetType, AccessTokenAuthorizable {
     
     var baseURL: URL { return URL(string: "http://api.beheltcarrot.ru")! }
     var path: String {
@@ -17,26 +18,37 @@ extension APIService: TargetType {
             return "/account/Register"
         case .login(email: _, password: _):
             return "/account/GetToken"
+        case .getUser:
+            return "/account/GetCurrentUser"
         }
     }
     var method: Moya.Method {
         switch self {
         case .login, .register:
             return .post
+        case .getUser:
+            return .get
         }
     }
     var task: Task {
         switch self {
         case .login(let email, let password), .register(let email, let password):
-            return .requestCompositeParameters(bodyParameters:  ["email": email, "password": password], bodyEncoding: JSONEncoding.default, urlParameters: [:])
+             return .requestCompositeParameters(bodyParameters: ["email": email, "password": password], bodyEncoding: JSONEncoding.default, urlParameters: [:])
+        case .getUser:
+            return .requestPlain
         }
     }
     
-    var sampleData: Data {
+    var authorizationType: AuthorizationType {
         switch self {
-        case .login(let email, let password), .register(let email, let password):
-            return "{\"email\": \(email), \"password\": \(password)}".utf8Encoded
+        case .getUser:
+            return .bearer
+        case .register(email: _, password: _),.login(email: _, password: _):
+            return .none
         }
+    }
+    var sampleData: Data {
+        return Data()
     }
 
     var headers: [String: String]? {
@@ -47,13 +59,4 @@ extension APIService: TargetType {
     }
 }
 
-private extension String {
-    var urlEscaped: String {
-        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-    }
-    
-    var utf8Encoded: Data {
-        return data(using: .utf8)!
-    }
-}
 

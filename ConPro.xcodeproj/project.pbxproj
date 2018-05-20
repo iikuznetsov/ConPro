@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA187C212094895600D29D5E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA187C202094895600D29D5E /* APIService.swift */; };
 		AA47E79620AC41DA00F4F1DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47E79520AC41DA00F4F1DF /* Extensions.swift */; };
+		AA84272920B0B504009C853C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84272820B0B504009C853C /* User.swift */; };
+		AA84272B20B0CE04009C853C /* HardcodedThings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84272A20B0CE04009C853C /* HardcodedThings.swift */; };
 		AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D2209538B200B34365 /* EventsViewController.swift */; };
 		AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */; };
 		AA88F1D7209C4E7E00B34365 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA88F1D6209C4E7E00B34365 /* EventViewController.swift */; };
@@ -30,6 +32,8 @@
 		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
 		AA187C202094895600D29D5E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AA47E79520AC41DA00F4F1DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AA84272820B0B504009C853C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AA84272A20B0CE04009C853C /* HardcodedThings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardcodedThings.swift; sourceTree = "<group>"; };
 		AA88F1D2209538B200B34365 /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		AA88F1D4209BC71100B34365 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		AA88F1D6209C4E7E00B34365 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			children = (
 				AA187C202094895600D29D5E /* APIService.swift */,
 				AA47E79520AC41DA00F4F1DF /* Extensions.swift */,
+				AA84272A20B0CE04009C853C /* HardcodedThings.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -115,6 +120,7 @@
 			children = (
 				AAB6B4222094B862008C4CB2 /* Token.swift */,
 				AA88F1D8209C4EC300B34365 /* Event.swift */,
+				AA84272820B0B504009C853C /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -271,7 +277,9 @@
 				AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */,
 				AA88F1D7209C4E7E00B34365 /* EventViewController.swift in Sources */,
 				AA90E104208F732800639262 /* AppDelegate.swift in Sources */,
+				AA84272920B0B504009C853C /* User.swift in Sources */,
 				AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */,
+				AA84272B20B0CE04009C853C /* HardcodedThings.swift in Sources */,
 				AA47E79620AC41DA00F4F1DF /* Extensions.swift in Sources */,
 				AA9E07D1209C7EDC00681BCA /* MenuCollectionViewCell.swift in Sources */,
 			);
@@ -419,7 +427,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TJRJQKBAR;
 				INFOPLIST_FILE = ConPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,7 +437,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ConPro.ConPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -437,7 +447,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9TJRJQKBAR;
 				INFOPLIST_FILE = ConPro/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +457,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ConPro.ConPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -12,3 +12,19 @@ extension UIViewController {
             self.view.endEditing(true)
     }
 }
+
+extension Date {
+    init?(date: String) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        guard let date = formatter.date(from: date) else {
+            return nil
+        }
+        self = date
+    }
+    func toString() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        return formatter.string(from: self)
+    }
+}

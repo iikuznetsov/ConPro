@@ -1,7 +1,7 @@
 import UIKit
 import Moya
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         statusLabel.text = ""
@@ -12,15 +12,16 @@ class LoginViewController: UIViewController {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBAction func logIn(_ sender: UIButton) {
-        
+        statusLabel.text = ""
         guard let email = emailTextField.text, let password = passwordTextField.text,
             !email.isEmpty, !password.isEmpty else {
                 statusLabel.text = "Please fill in both fields"
                 return
         }
-        
+        loadingIndicator.isHidden = false
         provider.request(.login(email: email, password: password)) {
             result in
             switch result {
@@ -42,6 +43,7 @@ class LoginViewController: UIViewController {
             case let .failure(error):
                 self.statusLabel.text = error.errorDescription
             }
+            self.loadingIndicator.isHidden = true
         }
     }
     
@@ -62,6 +64,11 @@ class LoginViewController: UIViewController {
         {
             textField.layer.borderColor = UIColor.clear.cgColor;
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {

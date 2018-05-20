@@ -1,15 +1,16 @@
 import UIKit
 import Moya
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatedPasswordTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     @IBAction func register(_ sender: UIButton) {
-        
+        statusLabel.text = ""
         guard let email = emailTextField.text, let password = passwordTextField.text,
             let rpassword = repeatedPasswordTextField.text,
             !email.isEmpty, !password.isEmpty, !rpassword.isEmpty else {
@@ -25,7 +26,7 @@ class RegisterViewController: UIViewController {
             statusLabel.text = "Email is incorrect"
             return
         }
-        
+        loadingIndicator.isHidden = false
         provider.request(.register(email: email, password: password)) {
             result in
             switch result {
@@ -35,7 +36,6 @@ class RegisterViewController: UIViewController {
                     UserDefaults.standard.set(response.data?.toJSON(), forKey:"token")
                     
                     self.performSegue(withIdentifier: "segueToEvents", sender: self)
-
                 }
                 catch {
                     let error = error as? MoyaError
@@ -48,6 +48,7 @@ class RegisterViewController: UIViewController {
             case let .failure(error):
                 self.statusLabel.text = error.errorDescription
             }
+            self.loadingIndicator.isHidden = true
         }
     }
 
@@ -82,6 +83,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
