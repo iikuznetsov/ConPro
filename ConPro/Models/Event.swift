@@ -8,6 +8,7 @@ class Event: NSObject {
     var timeEnd: Date?
     var place: String?
     var organizer: User?
+    var news = [News]()
     init(id: Int, name: String, image: UIImage, timeStart: Date, timeEnd: Date, place: String, organizer: User) {
         self.id = id
         self.name = name
