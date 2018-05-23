@@ -9,4 +9,5 @@ var cats = Event(id: 2, name: "Cat Lovers Convention", image: #imageLiteral(reso
 var ch = Event(id: 3, name: "CocoaHeads", image: #imageLiteral(resourceName: "ch"), timeStart: Date(date: "24-04-2018 10:00:00")!, timeEnd: Date(date: "25-04-2018 18:00:00")!, place: "Mail.ru Office" , organizer: u2)
 var ti = Event(id: 4, name: "The International 2018", image: #imageLiteral(resourceName: "ti"), timeStart: Date(date: "20-08-2018 11:00:00")!, timeEnd: Date(date: "25-08-2018 18:00:00")!, place: "Rogers Arena" , organizer: u2)
 var ev = Event(id: 5, name: "event", image: #imageLiteral(resourceName: "clock"), timeStart: Date(date: "20-05-2018 11:00:00")!, timeEnd: Date(date: "25-05-2018 18:00:00")!, place: "Conference Hall" , organizer: u2)
+var addedEvents = [Event]()
 

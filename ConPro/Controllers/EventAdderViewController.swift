@@ -4,8 +4,8 @@ class EventAdderViewController: UIViewController, UIImagePickerControllerDelegat
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dateStartSelection()
+        dateFinishSelection()
     }
     
     @IBOutlet weak var ImageView: UIImageView!
@@ -28,21 +28,59 @@ class EventAdderViewController: UIViewController, UIImagePickerControllerDelegat
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBOutlet weak var DateStart: UITextField!
+    @IBOutlet weak var DateFinish: UITextField!
+    
+    let datePicker = UIDatePicker()
+    
+    func dateStartSelection(){
+        datePicker.datePickerMode = .dateAndTime
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedStart))
+        toolbar.setItems([doneButton], animated: false)
+        DateStart.inputAccessoryView = toolbar
+        DateStart.inputView = datePicker
+    }
+    
+    func dateFinishSelection(){
+        datePicker.datePickerMode = .dateAndTime
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedFinish))
+        toolbar.setItems([doneButton], animated: false)
+        DateFinish.inputAccessoryView = toolbar
+        DateFinish.inputView = datePicker
+    }
+    
+    @objc func donePressedStart(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        DateStart.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    @objc func donePressedFinish(){
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        formatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        DateFinish.text = formatter.string(from: datePicker.date)
+        self.view.endEditing(true)
+    }
+    
+    @IBOutlet weak var TitleTextField: UITextField!
+    @IBOutlet weak var PlaceTextField: UITextField!
+    @IBOutlet weak var DescriptionTextView: UITextView!
+    
+    @IBAction func CreateEvent(_ sender: Any) {
+        //waiting for api
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
