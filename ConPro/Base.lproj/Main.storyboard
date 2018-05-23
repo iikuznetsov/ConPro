@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -538,13 +539,69 @@
                     <view key="view" contentMode="scaleToFill" id="XjH-ed-hdb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MpU-TF-Gwf">
+                                <rect key="frame" x="20" y="83" width="374" height="633"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="newsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsCell" rowHeight="400" id="lKp-vh-wab" customClass="NewsTableViewCell" customModule="ConPro" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lKp-vh-wab" id="XBf-kx-i1m">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="199.66666666666666"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sAL-ME-4K0">
+                                                    <rect key="frame" x="20" y="10" width="334" height="32.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Exposition" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R9c-G2-BW9">
+                                                    <rect key="frame" x="20" y="50.666666666666671" width="334" height="138.33333333333331"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R9c-G2-BW9" firstAttribute="trailing" secondItem="XBf-kx-i1m" secondAttribute="trailingMargin" id="Eg7-to-OWh"/>
+                                                <constraint firstItem="R9c-G2-BW9" firstAttribute="leading" secondItem="XBf-kx-i1m" secondAttribute="leadingMargin" id="RIJ-4i-jqU"/>
+                                                <constraint firstItem="sAL-ME-4K0" firstAttribute="top" secondItem="XBf-kx-i1m" secondAttribute="top" constant="10" id="XyB-R7-RS6"/>
+                                                <constraint firstItem="R9c-G2-BW9" firstAttribute="top" secondItem="sAL-ME-4K0" secondAttribute="bottom" constant="8" id="dxq-eo-N2V"/>
+                                                <constraint firstItem="R9c-G2-BW9" firstAttribute="bottom" secondItem="XBf-kx-i1m" secondAttribute="bottomMargin" id="gMN-U0-g2x"/>
+                                                <constraint firstItem="sAL-ME-4K0" firstAttribute="trailing" secondItem="R9c-G2-BW9" secondAttribute="trailing" id="t89-Bi-78k"/>
+                                                <constraint firstItem="sAL-ME-4K0" firstAttribute="leading" secondItem="R9c-G2-BW9" secondAttribute="leading" id="ygc-z7-rRt"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="newsExposition" destination="R9c-G2-BW9" id="IZD-Ml-Uqa"/>
+                                            <outlet property="newsHeader" destination="sAL-ME-4K0" id="sMu-LX-nsY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vTd-Ak-6hZ" id="bVv-gb-tYQ"/>
+                                    <outlet property="delegate" destination="vTd-Ak-6hZ" id="yq4-8t-aNt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DG6-1I-oEQ" firstAttribute="bottom" secondItem="MpU-TF-Gwf" secondAttribute="bottom" constant="20" id="7Xx-kQ-jwe"/>
+                            <constraint firstItem="MpU-TF-Gwf" firstAttribute="leading" secondItem="DG6-1I-oEQ" secondAttribute="leading" constant="20" id="NDo-gt-qn4"/>
+                            <constraint firstItem="DG6-1I-oEQ" firstAttribute="trailing" secondItem="MpU-TF-Gwf" secondAttribute="trailing" constant="20" id="PXy-LO-i0E"/>
+                            <constraint firstItem="MpU-TF-Gwf" firstAttribute="top" secondItem="DG6-1I-oEQ" secondAttribute="top" constant="19" id="b0x-Xh-gyt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="DG6-1I-oEQ"/>
                     </view>
+                    <connections>
+                        <outlet property="newsTableView" destination="MpU-TF-Gwf" id="8rg-No-KHU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fHC-Kd-32l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3941" y="224"/>
+            <point key="canvasLocation" x="3940" y="219"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="V4O-Xc-jUt">

@@ -23,6 +23,16 @@ class EventViewController: UIViewController, UICollectionViewDelegate, UICollect
         performSegue(withIdentifier: menu[indexPath.row][1] as! String, sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        
+        if segue.identifier == "News Feed" {
+            
+            let vc = segue.destination as! NewsViewController
+            vc.selectedEvent = selectedEvent
+              
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventNameLabel.text = selectedEvent?.name
