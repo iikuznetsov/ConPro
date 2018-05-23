@@ -524,11 +524,27 @@
                         <outlet property="eventImage" destination="QES-oW-40U" id="4qF-st-kZl"/>
                         <outlet property="eventNameLabel" destination="Aoq-X3-oLK" id="rAr-c4-cv7"/>
                         <outlet property="menuCollectionView" destination="NAP-eZ-5dZ" id="Jkv-Fs-amR"/>
+                        <segue destination="vTd-Ak-6hZ" kind="show" identifier="News Feed" id="ebc-SE-Vz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6i-w2-9OT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2981.1594202898555" y="220.10869565217394"/>
+        </scene>
+        <!--News View Controller-->
+        <scene sceneID="kuH-gE-hXU">
+            <objects>
+                <viewController id="vTd-Ak-6hZ" customClass="NewsViewController" customModule="ConPro" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XjH-ed-hdb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="DG6-1I-oEQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHC-Kd-32l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3941" y="224"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="V4O-Xc-jUt">

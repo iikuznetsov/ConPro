@@ -19,6 +19,10 @@ class EventViewController: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: menu[indexPath.row][1] as! String, sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         eventNameLabel.text = selectedEvent?.name
