@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94AD3DAB20B5996900C79B79 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AD3DAA20B5996900C79B79 /* News.swift */; };
+		94AD3DAF20B59A2C00C79B79 /* EventAdderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AD3DAE20B59A2C00C79B79 /* EventAdderViewController.swift */; };
 		AA187C212094895600D29D5E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA187C202094895600D29D5E /* APIService.swift */; };
 		AA47E79620AC41DA00F4F1DF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47E79520AC41DA00F4F1DF /* Extensions.swift */; };
 		AA84272920B0B504009C853C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA84272820B0B504009C853C /* User.swift */; };
@@ -33,6 +35,8 @@
 		1CCC46CCE5649E3D4112AC0B /* Pods-ConPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.release.xcconfig"; sourceTree = "<group>"; };
 		7CA5C7B39B96C88B4CF553D9 /* Pods_ConPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ConPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82A9520EBFEEE098670794BF /* Pods-ConPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConPro/Pods-ConPro.debug.xcconfig"; sourceTree = "<group>"; };
+		94AD3DAA20B5996900C79B79 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		94AD3DAE20B59A2C00C79B79 /* EventAdderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAdderViewController.swift; sourceTree = "<group>"; };
 		AA187C202094895600D29D5E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AA47E79520AC41DA00F4F1DF /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		AA84272820B0B504009C853C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				AAB6B4222094B862008C4CB2 /* Token.swift */,
+				94AD3DAA20B5996900C79B79 /* News.swift */,
 				AA88F1D8209C4EC300B34365 /* Event.swift */,
 				AA84272820B0B504009C853C /* User.swift */,
 				F892545120B4D1E400E94C31 /* News.swift */,
@@ -150,6 +155,7 @@
 				AA88F1D2209538B200B34365 /* EventsViewController.swift */,
 				AA88F1D6209C4E7E00B34365 /* EventViewController.swift */,
 				F8EE79CC20B4E10E003305E5 /* NewsViewController.swift */,
+				94AD3DAE20B59A2C00C79B79 /* EventAdderViewController.swift */
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +295,7 @@
 				AA88F1D5209BC71100B34365 /* EventTableViewCell.swift in Sources */,
 				AA88F1D7209C4E7E00B34365 /* EventViewController.swift in Sources */,
 				AA90E104208F732800639262 /* AppDelegate.swift in Sources */,
+				94AD3DAF20B59A2C00C79B79 /* EventAdderViewController.swift in Sources */,
 				AA84272920B0B504009C853C /* User.swift in Sources */,
 				AA88F1D3209538B200B34365 /* EventsViewController.swift in Sources */,
 				AA84272B20B0CE04009C853C /* HardcodedThings.swift in Sources */,
