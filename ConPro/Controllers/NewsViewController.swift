@@ -9,8 +9,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var newsTableView: UITableView!
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return (self.selectedEvent?.news.count)!
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (selectedEvent?.news.count)!
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -24,6 +28,16 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.black
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 5
     }
     
     override func viewDidLoad() {
