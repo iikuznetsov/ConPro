@@ -3,7 +3,7 @@ import UIKit
 class NewsTableViewCell : UITableViewCell {
     
     @IBOutlet weak var newsHeader: UILabel!
-    @IBOutlet weak var newsExposition: UITextView!
+    @IBOutlet weak var newsMessage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

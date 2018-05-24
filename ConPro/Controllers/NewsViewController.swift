@@ -6,6 +6,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var selectedEvent: Event?
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var newsTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,8 +19,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         n = selectedEvent?.news[indexPath.row]
         
-        cell.newsHeader.text = n!.header
-        cell.newsExposition.text = n!.exposition
+        cell.newsHeader.text = n!.name
+        cell.newsMessage.text = n!.message
         
         return cell
         
@@ -28,6 +29,11 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedEvent?.news.append(n1)
+        
+        // wrap by checking if user is organizer
+        //if true {
+        //    addButton.isHidden = false
+        //}
     }
 
     override func didReceiveMemoryWarning() {

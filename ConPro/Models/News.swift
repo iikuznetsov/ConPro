@@ -3,11 +3,11 @@ import UIKit
 
 class News: NSObject {
     var id: Int?
-    var header: String?
-    var exposition: String?
-    init(id: Int, header: String, exposition: String) {
+    var name: String?
+    var message: String?
+    init(id: Int, name: String, message: String) {
         self.id = id
-        self.header = header
-        self.exposition = exposition
+        self.name = name
+        self.message = message
     }
 }
